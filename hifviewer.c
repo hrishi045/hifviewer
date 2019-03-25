@@ -126,7 +126,7 @@ int main(int argc, char *argv[]) {
   //   printf("%x ", unzbuf[i]);
 
   SDL_Window *win = SDL_CreateWindow(
-    "Hello World!",
+    argv[1],
     SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
     width, height, SDL_WINDOW_SHOWN);
   
@@ -142,7 +142,9 @@ int main(int argc, char *argv[]) {
     size_t l = 0;
     for (size_t i = 0; i < width; i++) {
       for (size_t j = 0; j < height; j++) {
-        SDL_SetRenderDrawColor(ren, unzbuf[l++], unzbuf[l++], unzbuf[l++], 0xFF);
+        // SDL_SetRenderDrawColor(ren, unzbuf[l++], unzbuf[l++], unzbuf[l++], 0xFF);
+        // SDL_RenderDrawPoint(ren, i, j);
+        SDL_SetRenderDrawColor(ren, i, j, 0x00, 0xFF);
         SDL_RenderDrawPoint(ren, i, j);
       }
     }
